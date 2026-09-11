@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    border: 0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background:#0b0b12;
+    color: #ffffff;
+    min-height: 100vh;
+}
+button{
+    font:inherit;
+    cursor:pointer;
+}
+
+section{
+     width: 90%;
+    max-width: 1200px;
+    margin: 60px auto;
+}
+
+header{
+    padding: 20px 5%;
+}
+
+#title{
+      display: flex;
+    align-items: center;
+    gap: 12px;
+}
+#main-title {
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+#title > p {
+    color: #999;
+    font-size: 13px;
+}
+.navbar {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.nav-btn,
+.resell-btn,
+.theme-btn,
+.profile-btn {
+    border: none;
+    background: transparent;
+    color: #ffffff;
+    padding: 10px 14px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+.nav-btn:hover,
+.resell-btn:hover {
+    background: #191923;
+}
+.theme-btn,
+.profile-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.theme-btn:hover,
+.profile-btn:hover {
+    background: #191923;
+}
+.theme-btn svg,
+.profile-btn svg {
+    width: 18px;
+}

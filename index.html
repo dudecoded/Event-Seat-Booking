@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEbook | Discover Events</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+   <header>
+    <nav id="title">
+        <h1 id="main-title">WEbook</h1>
+        <p>Events that bring us close</p>
+      <div class="navbar">
+    <button class="nav-btn">Explore</button>
+    <button class="nav-btn">Events</button>
+  <button class="resell-btn">Ticket Resell</button>
+    <button class="theme-btn">
+        <i data-lucide="sun"></i>
+    </button>
+    <button class="profile-btn">
+        <i data-lucide="user"></i>
+    </button>
+</div>
+        
+    </nav>
+    
+   </header> 
+
+   <main>
+
+<section class="search-section">
+    <h2>Find your next experience</h2>
+
+    <div class="search-bar">
+        <i data-lucide="search"></i>
+
+        <input 
+            type="text" 
+            placeholder="Search events, artists, venues..."
+        >
+
+        <button class="search-btn">Search</button>
+    </div>
+         </section>
+        
+        
+                  
+         <section class="categories">
+     <h2>Explore Categories</h2>
+
+    <div class="category-list">
+
+        <button class="category-card">
+            <i data-lucide="trophy"></i>
+            <span>Sports</span>
+        </button>
+
+        <button class="category-card">
+            <i data-lucide="music"></i>
+            <span>Concerts</span>
+        </button>
+
+        <button class="category-card">
+            <i data-lucide="clapperboard"></i>
+            <span>Movies</span>
+        </button>
+
+        <button class="category-card">
+            <i data-lucide="drama"></i>
+            <span>Shows</span>
+        </button>
+
+        <button class="category-card">
+            <i data-lucide="mic"></i>
+            <span>Comedy</span>
+        </button>
+
+        <button class="category-card">
+            <i data-lucide="palette"></i>
+            <span>Arts</span>
+        </button>
+
+    </div>
+       </section>
+
+
+       <section class="promotions">
+
+    <h2>What's Happening</h2>
+
+    <div class="carousel">
+
+        <div class="slide">
+            <img src="images/concert.jpg" alt="Concert promotion">
+
+            <div class="slide-content">
+                <p>LIVE MUSIC</p>
+                <h2>Experience the Night</h2>
+                <span>Book your seats now</span>
+                <button class="promo-btn">Explore Event</button>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="images/sports.jpg" alt="Sports promotion">
+
+            <div class="slide-content">
+                <p>SPORTS</p>
+                <h2>Feel the Energy</h2>
+                <span>Don't miss the action</span>
+                <button class="promo-btn">Explore Event</button>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="images/comedy.jpg" alt="Comedy promotion">
+
+            <div class="slide-content">
+                <p>COMEDY</p>
+                <h2>Laugh Out Loud</h2>
+                <span>Get your tickets today</span>
+                <button class="promo-btn">Explore Event</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="carousel-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+</section>
+   </main>
+   <footer>
+
+   </footer>
+   <script>
+    lucide.createIcons();
+</script>
+<script src="script.js"></script>
+</body>
+
+</html>
