@@ -4,10 +4,10 @@ WEbook — Event Seat Booking System
 
 A simple event discovery and seat booking website, built for a college/society project using plain HTML, CSS, and vanilla JavaScript — no frameworks, no backend, no database. All booking data is saved locally in the browser with localStorage.
 
-How to run: No setup needed — just open index.html in a browser.
+
 
 Page flow:
-index.html → event.html?event=<id> → booking.html?event=<id> → bookings.html
+index.html → event.html → booking.html → bookings.html
 One reusable event.html and one reusable booking.html handle every event, based on the ?event= id in the URL.
 
 Features:
