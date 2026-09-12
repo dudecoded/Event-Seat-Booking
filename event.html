@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WEbook | Event</title>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <nav id="title">
+
+        <h1 id="main-title">WEbook</h1>
+        <p>Events that bring us close</p>
+
+        <div class="navbar">
+            <button class="nav-btn" onclick="location.href='index.html'">
+                Explore
+            </button>
+
+            <button class="nav-btn" onclick="location.href='bookings.html'">
+                My Bookings
+            </button>
+
+            <button class="resell-btn">
+                Ticket Resell
+            </button>
+
+            <button class="theme-btn">
+                <i data-lucide="sun"></i>
+            </button>
+
+            <button class="profile-btn">
+                <i data-lucide="user"></i>
+            </button>
+        </div>
+
+    </nav>
+</header>
+
+
+<main>
+
+    <!-- All the text below is placeholder text.
+         script.js replaces it with the real event's data based on
+         the ?event= id in the URL (see the "events" array in script.js) -->
+
+    <section class="event-page">
+
+        <img
+            id="event-image"
+            src="images/concert.jpg"
+            alt="Event image"
+            class="event-main-image"
+        >
+
+        <div class="event-details">
+
+            <p class="event-category" id="event-category-label">CATEGORY</p>
+
+            <h1 id="event-name">Event Name</h1>
+
+            <p class="event-description" id="event-description">
+                Event description will appear here.
+            </p>
+
+            <div class="event-meta">
+
+                <p>
+                    <i data-lucide="calendar"></i>
+                    <span id="event-date">--</span>
+                </p>
+
+                <p>
+                    <i data-lucide="clock"></i>
+                    <span id="event-time">--</span>
+                </p>
+
+                <p>
+                    <i data-lucide="map-pin"></i>
+                    <span id="event-location">--</span>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="ticket-section">
+
+        <h2>Ticket Categories</h2>
+
+        <div class="ticket-list">
+
+            <div class="ticket-card">
+                <h3>VIP</h3>
+                <p>Best seats</p>
+                <strong>₹500</strong>
+            </div>
+
+            <div class="ticket-card">
+                <h3>Premium</h3>
+                <p>Great view</p>
+                <strong>₹300</strong>
+            </div>
+
+            <div class="ticket-card">
+                <h3>Regular</h3>
+                <p>Standard seating</p>
+                <strong>₹150</strong>
+            </div>
+
+        </div>
+
+        <!-- id="select-seats-btn": script.js attaches the click handler
+             so it can send the correct ?event= id along to booking.html -->
+        <button
+            class="book-btn"
+            id="select-seats-btn"
+        >
+            Select Seats
+        </button>
+
+    </section>
+
+
+    <section class="about-event">
+
+        <h2>About the Event</h2>
+
+        <p id="event-about-text">
+            Choose your preferred seats and enjoy the experience.
+        </p>
+
+    </section>
+
+</main>
+
+
+<footer class="footer">
+
+    <h2>WEbook</h2>
+
+    <div class="social-icons">
+        <a href="#"><i data-lucide="instagram"></i></a>
+        <a href="#"><i data-lucide="twitter"></i></a>
+        <a href="#"><i data-lucide="facebook"></i></a>
+    </div>
+
+    <p>© 2026 WEbook. All rights reserved.</p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+<script>
+    lucide.createIcons();
+</script>
+
+</body>
+</html>

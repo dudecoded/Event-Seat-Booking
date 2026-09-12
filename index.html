@@ -1,148 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>WEbook | Discover Events</title>
+
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-   <header>
-    <nav id="title">
-        <h1 id="main-title">WEbook</h1>
-        <p>Events that bring us close</p>
-      <div class="navbar">
-    <button class="nav-btn">Explore</button>
-    <button class="nav-btn">Events</button>
-  <button class="resell-btn">Ticket Resell</button>
-    <button class="theme-btn">
-        <i data-lucide="sun"></i>
-    </button>
-    <button class="profile-btn">
-        <i data-lucide="user"></i>
-    </button>
-</div>
-        
-    </nav>
-    
-   </header> 
 
-   <main>
+    <!-- ================= NAVBAR ================= -->
 
-<section class="search-section">
-    <h2>Find your next experience</h2>
+    <header>
+        <nav id="title">
 
-    <div class="search-bar">
-        <i data-lucide="search"></i>
-
-        <input 
-            type="text" 
-            placeholder="Search events, artists, venues..."
-        >
-
-        <button class="search-btn">Search</button>
-    </div>
-         </section>
-        
-        
-                  
-         <section class="categories">
-     <h2>Explore Categories</h2>
-
-    <div class="category-list">
-
-        <button class="category-card">
-            <i data-lucide="trophy"></i>
-            <span>Sports</span>
-        </button>
-
-        <button class="category-card">
-            <i data-lucide="music"></i>
-            <span>Concerts</span>
-        </button>
-
-        <button class="category-card">
-            <i data-lucide="clapperboard"></i>
-            <span>Movies</span>
-        </button>
-
-        <button class="category-card">
-            <i data-lucide="drama"></i>
-            <span>Shows</span>
-        </button>
-
-        <button class="category-card">
-            <i data-lucide="mic"></i>
-            <span>Comedy</span>
-        </button>
-
-        <button class="category-card">
-            <i data-lucide="palette"></i>
-            <span>Arts</span>
-        </button>
-
-    </div>
-       </section>
-
-
-       <section class="promotions">
-
-    <h2>What's Happening</h2>
-
-  <section class="events">
-
-    <h2>Upcoming Events</h2>
-
-    <div class="event-list">
-
-        <div class="event-card">
-            <img src="images/concert.jpg" alt="Melody Nights">
-
-            <div class="event-info">
-                <p>CONCERT</p>
-                <h3>Melody Nights</h3>
-                <span>15 Nov • Lucknow</span>
-                <strong>From ₹500</strong>
+            <div class="brand">
+                <h1>WEbook</h1>
+                <p class="tagline">Your world. Your events.</p>
             </div>
+
+            <div class="navbar">
+
+                <button class="nav-btn" onclick="location.href='index.html'">
+                    Explore
+                </button>
+
+                <button class="nav-btn" onclick="location.href='bookings.html'">
+                    My Bookings
+                </button>
+
+                <button class="resell-btn">
+                    Ticket Resell
+                </button>
+
+                <button class="theme-btn" aria-label="Change theme">
+                    <i data-lucide="sun"></i>
+                </button>
+
+                <button class="profile-btn" aria-label="Profile">
+                    <i data-lucide="user"></i>
+                </button>
+
+            </div>
+
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- ================= SEARCH ================= -->
+
+        <section class="search-section">
+
+            <h2>Find your next experience</h2>
+
+            <div class="search-bar">
+
+                <i data-lucide="search"></i>
+
+                <input
+                    type="text"
+                    id="event-search"
+                    placeholder="Search events, artists, venues..."
+                    aria-label="Search events"
+                >
+
+                <button class="search-btn">
+                    Search
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CATEGORIES ================= -->
+
+        <section class="categories">
+
+            <h2>Explore Categories</h2>
+
+            <div class="category-list">
+
+                <button class="category-card">
+                    <i data-lucide="trophy"></i>
+                    <span>Sports</span>
+                </button>
+
+                <button class="category-card">
+                    <i data-lucide="music"></i>
+                    <span>Concerts</span>
+                </button>
+
+                <button class="category-card">
+                    <i data-lucide="clapperboard"></i>
+                    <span>Movies</span>
+                </button>
+
+                <button class="category-card">
+                    <i data-lucide="drama"></i>
+                    <span>Shows</span>
+                </button>
+
+                <button class="category-card">
+                    <i data-lucide="mic"></i>
+                    <span>Comedy</span>
+                </button>
+
+                <button class="category-card">
+                    <i data-lucide="palette"></i>
+                    <span>Arts</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= UPCOMING EVENTS ================= -->
+
+        <section class="events">
+
+            <h2>Upcoming Events</h2>
+
+            <div class="event-list">
+
+
+                <!-- EVENT 1: id must match an id in the "events" array in script.js -->
+
+                <article
+                    class="event-card"
+                    onclick="location.href='event.html?event=melody'"
+                    tabindex="0"
+                    role="button"
+                >
+
+                    <img
+                        src="images/concert.jpg"
+                        alt="Melody Nights concert"
+                    >
+
+                    <div class="event-info">
+
+                        <p class="event-category">CONCERT</p>
+
+                        <h3>Melody Nights</h3>
+
+                        <span>
+                            <i data-lucide="calendar"></i>
+                            15 Nov • Lucknow
+                        </span>
+
+                        <strong>From ₹150</strong>
+
+                    </div>
+
+                </article>
+
+
+                <!-- EVENT 2 -->
+
+                <article
+                    class="event-card"
+                    onclick="location.href='event.html?event=basketball'"
+                    tabindex="0"
+                    role="button"
+                >
+
+                    <img
+                        src="images/sports.jpg"
+                        alt="Basketball showdown"
+                    >
+
+                    <div class="event-info">
+
+                        <p class="event-category">SPORTS</p>
+
+                        <h3>Basketball Showdown</h3>
+
+                        <span>
+                            <i data-lucide="calendar"></i>
+                            22 Nov • Delhi
+                        </span>
+
+                        <strong>From ₹150</strong>
+
+                    </div>
+
+                </article>
+
+
+                <!-- EVENT 3 -->
+
+                <article
+                    class="event-card"
+                    onclick="location.href='event.html?event=comedy'"
+                    tabindex="0"
+                    role="button"
+                >
+
+                    <img
+                        src="images/comedy.jpg"
+                        alt="Comedy Live show"
+                    >
+
+                    <div class="event-info">
+
+                        <p class="event-category">COMEDY</p>
+
+                        <h3>Comedy Live</h3>
+
+                        <span>
+                            <i data-lucide="calendar"></i>
+                            28 Nov • Noida
+                        </span>
+
+                        <strong>From ₹150</strong>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <h2>WEbook</h2>
+
+        <div class="social-icons">
+
+            <a href="#" aria-label="Instagram">
+                <i data-lucide="instagram"></i>
+            </a>
+
+            <a href="#" aria-label="Twitter">
+                <i data-lucide="twitter"></i>
+            </a>
+
+            <a href="#" aria-label="Facebook">
+                <i data-lucide="facebook"></i>
+            </a>
+
         </div>
 
+        <p>
+            © 2026 WEbook. All rights reserved.
+        </p>
 
-        <div class="event-card">
-            <img src="images/sports.jpg" alt="ISL Showdown">
-
-            <div class="event-info">
-                <p>SPORTS</p>
-                <h3>basketball Showdown</h3>
-                <span>22 Nov • Delhi</span>
-                <strong>From ₹300</strong>
-            </div>
-        </div>
+    </footer>
 
 
-        <div class="event-card">
-            <img src="images/comedy.jpg" alt="Comedy Live">
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 
-            <div class="event-info">
-                <p>COMEDY</p>
-                <h3>Comedy Live</h3>
-                <span>28 Nov • Noida</span>
-                <strong>From ₹400</strong>
-            </div>
-        </div>
+    <!-- Lucide (must run after script.js in case script.js changes any icon markup) -->
+    <script>
+        lucide.createIcons();
+    </script>
 
-    </div>
-
-</section>
-   </main>
-   <footer>
-
-   </footer>
-   <script>
-    lucide.createIcons();
-</script>
-<script src="script.js"></script>
 </body>
 
 </html>

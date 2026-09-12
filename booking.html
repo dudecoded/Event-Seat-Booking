@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WEbook | Select Seats</title>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+<header>
+
+    <nav id="title">
+
+        <h1 id="main-title">WEbook</h1>
+
+        <p>Events that bring us close</p>
+
+        <div class="navbar">
+
+            <button
+                class="nav-btn"
+                onclick="location.href='index.html'"
+            >
+                Explore
+            </button>
+
+            <button
+                class="nav-btn"
+                onclick="location.href='bookings.html'"
+            >
+                My Bookings
+            </button>
+
+            <button class="theme-btn">
+                <i data-lucide="sun"></i>
+            </button>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+<section class="booking-page">
+
+    <!-- ============ HEADER: which event we are booking for ============ -->
+    <div class="booking-header">
+        <h1 id="booking-event-name">Event Name</h1>
+        <p id="booking-event-meta">Date • Location</p>
+    </div>
+
+    <div class="booking-layout">
+
+        <!-- ============ LEFT: seat map ============ -->
+        <div class="seat-section">
+
+            <div class="stage">STAGE / SCREEN</div>
+
+            <!-- Filter buttons: filter seats by category or by availability.
+                 script.js reads data-filter to know which category to show. -->
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="VIP">VIP</button>
+                <button class="filter-btn" data-filter="Premium">Premium</button>
+                <button class="filter-btn" data-filter="Regular">Regular</button>
+                <button class="filter-btn" id="available-only-btn">Available Only</button>
+            </div>
+
+            <!-- Seat capacity per category, e.g. "VIP: 14/20 available" -->
+            <div class="capacity-info">
+                <span id="vip-capacity">VIP: 0/20 available</span>
+                <span id="premium-capacity">Premium: 0/20 available</span>
+                <span id="regular-capacity">Regular: 0/20 available</span>
+            </div>
+
+            <!-- script.js fills this with 60 seat buttons -->
+            <div class="seat-container" id="seat-container"></div>
+
+            <div class="seat-legend">
+                <span><span class="legend available"></span> Available</span>
+                <span><span class="legend selected"></span> Selected</span>
+                <span><span class="legend booked"></span> Booked</span>
+            </div>
+
+        </div>
+
+        <!-- ============ RIGHT: booking summary ============ -->
+        <div class="booking-summary">
+
+            <h2>Booking Summary</h2>
+
+            <p id="selected-seats">No seats selected</p>
+
+            <div class="summary-row">
+                <span>Seats selected</span>
+                <strong id="seat-count">0</strong>
+            </div>
+
+            <div class="summary-row">
+                <span>Total Price</span>
+                <strong id="total-price">₹0</strong>
+            </div>
+
+            <button class="book-btn" id="confirm-booking">
+                Confirm Booking
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer class="footer">
+
+    <h2>WEbook</h2>
+
+    <div class="social-icons">
+
+        <a href="#">
+            <i data-lucide="instagram"></i>
+        </a>
+
+        <a href="#">
+            <i data-lucide="twitter"></i>
+        </a>
+
+        <a href="#">
+            <i data-lucide="facebook"></i>
+        </a>
+
+    </div>
+
+    <p>© 2026 WEbook. All rights reserved.</p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+<script>
+    lucide.createIcons();
+</script>
+
+</body>
+
+</html>
