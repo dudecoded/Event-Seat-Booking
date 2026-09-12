@@ -1,17 +1,4 @@
-/* =========================================================
-   WEBOOK - EVENT SEAT BOOKING SYSTEM
-   Plain HTML + CSS + vanilla JavaScript + localStorage
-   =========================================================
-   This one file runs on every page (index, event, booking,
-   bookings). Each section below checks "does this page have
-   the element I need?" before it runs, so nothing crashes on
-   pages that don't have that element.
-   ========================================================= */
 
-
-/* ---------- 1. EVENT DATA ----------
-   One simple array of objects. Add a new event by adding a
-   new object here - no other file needs to change. */
 
 const events = [
     {
@@ -46,8 +33,7 @@ const events = [
     }
 ];
 
-// Every event uses the same 3 ticket categories and the same
-// seat layout: seats 1-20 = VIP, 21-40 = Premium, 41-60 = Regular.
+
 const seatCategories = [
     { category: "VIP", price: 500 },
     { category: "Premium", price: 300 },
@@ -55,18 +41,13 @@ const seatCategories = [
 ];
 
 
-/* ---------- 2. SMALL HELPER FUNCTIONS ---------- */
 
-// Reads a value from the page URL, e.g. booking.html?event=melody
-// getQueryParam("event") returns "melody"
 function getQueryParam(name) {
     const params = new URLSearchParams(window.location.search);
     return params.get(name);
 }
 
-// Bookings are stored in localStorage as ONE object, keyed by event id:
-// { "melody": [1, 2, 3], "comedy": [45, 46] }
-// This lets us track bookings separately per event.
+
 function getAllBookings() {
     const stored = localStorage.getItem("webookBookings");
     return stored ? JSON.parse(stored) : {};
@@ -76,11 +57,11 @@ function saveAllBookings(bookings) {
     localStorage.setItem("webookBookings", JSON.stringify(bookings));
 }
 
-// Works out the ticket price for a given seat number
+
 function getSeatPrice(seatId) {
-    if (seatId <= 20) return 500;      // VIP
-    if (seatId <= 40) return 300;      // Premium
-    return 150;                        // Regular
+    if (seatId <= 20) return 500;     
+    if (seatId <= 40) return 300;      
+    return 150;                      
 }
 
 function getSeatCategory(seatId) {
@@ -90,10 +71,7 @@ function getSeatCategory(seatId) {
 }
 
 
-/* =========================================================
-   3. EVENT PAGE (event.html)
-   Fills in the event details based on ?event= in the URL.
-   ========================================================= */
+
 
 const eventNameElement = document.getElementById("event-name");
 
@@ -111,7 +89,7 @@ if (eventNameElement) {
     document.getElementById("event-time").textContent = currentEvent.time;
     document.getElementById("event-location").textContent = currentEvent.location;
 
-    // Send the event id along to the booking page
+   
     const selectSeatsBtn = document.getElementById("select-seats-btn");
     selectSeatsBtn.addEventListener("click", function () {
         window.location.href = "booking.html?event=" + currentEvent.id;
@@ -119,9 +97,7 @@ if (eventNameElement) {
 }
 
 
-/* =========================================================
-   4. BOOKING PAGE (booking.html) - seat selection
-   ========================================================= */
+
 
 const seatContainer = document.getElementById("seat-container");
 
@@ -134,7 +110,7 @@ if (seatContainer) {
     document.getElementById("booking-event-meta").textContent =
         currentEvent.date + " • " + currentEvent.location;
 
-    // Load only THIS event's booked seats
+
     const allBookings = getAllBookings();
     let bookedSeats = allBookings[currentEvent.id] || [];
 
@@ -145,7 +121,7 @@ if (seatContainer) {
     const totalPriceElement = document.getElementById("total-price");
     const confirmButton = document.getElementById("confirm-booking");
 
-    // ---- 4a. Create 60 seat buttons ----
+    
     for (let i = 1; i <= 60; i++) {
 
         const seat = document.createElement("button");
@@ -162,7 +138,7 @@ if (seatContainer) {
         seat.addEventListener("click", function () {
 
             if (seat.classList.contains("booked")) {
-                return; // can't select an already booked seat
+                return; 
             }
 
             const seatId = Number(seat.dataset.id);
@@ -181,7 +157,7 @@ if (seatContainer) {
         seatContainer.appendChild(seat);
     }
 
-    // ---- 4b. Booking summary (selected seats + total price) ----
+    
     function updateSummary() {
 
         if (selectedSeats.length === 0) {
@@ -202,7 +178,7 @@ if (seatContainer) {
         totalPriceElement.textContent = "₹" + total;
     }
 
-    // ---- 4c. Capacity info per category (e.g. "VIP: 14/20 available") ----
+    
     function updateCapacity() {
         seatCategories.forEach(cat => {
 
@@ -226,7 +202,7 @@ if (seatContainer) {
 
     updateCapacity();
 
-    // ---- 4d. Filters: by category and by availability ----
+    
     let showAvailableOnly = false;
     const categoryFilterButtons = document.querySelectorAll(".filter-btn[data-filter]");
     const availableOnlyBtn = document.getElementById("available-only-btn");
@@ -268,7 +244,7 @@ if (seatContainer) {
         });
     }
 
-    // ---- 4e. Confirm booking ----
+   
     confirmButton.addEventListener("click", function () {
 
         if (selectedSeats.length === 0) {
@@ -286,9 +262,6 @@ if (seatContainer) {
 }
 
 
-/* =========================================================
-   5. MY BOOKINGS PAGE (bookings.html)
-   ========================================================= */
 
 const bookingList = document.getElementById("booking-list");
 
@@ -296,7 +269,7 @@ if (bookingList) {
 
     const allBookings = getAllBookings();
 
-    // Only keep events that actually have seats booked
+    
     const bookedEventIds = Object.keys(allBookings).filter(
         id => allBookings[id].length > 0
     );
@@ -308,7 +281,7 @@ if (bookingList) {
 
     } else {
 
-        bookingList.innerHTML = ""; // clear it first
+        bookingList.innerHTML = ""; 
 
         bookedEventIds.forEach(eventId => {
 
@@ -335,14 +308,14 @@ if (bookingList) {
             bookingList.appendChild(card);
         });
 
-        // Attach a cancel handler to every cancel button
+        
         document.querySelectorAll(".cancel-btn").forEach(button => {
 
             button.addEventListener("click", function () {
 
                 const eventId = button.dataset.event;
 
-                delete allBookings[eventId]; // frees up all its seats
+                delete allBookings[eventId]; 
                 saveAllBookings(allBookings);
 
                 alert("Booking cancelled.");

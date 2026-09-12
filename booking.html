@@ -56,7 +56,7 @@
 
 <section class="booking-page">
 
-    <!-- ============ HEADER: which event we are booking for ============ -->
+    
     <div class="booking-header">
         <h1 id="booking-event-name">Event Name</h1>
         <p id="booking-event-meta">Date • Location</p>
@@ -64,13 +64,10 @@
 
     <div class="booking-layout">
 
-        <!-- ============ LEFT: seat map ============ -->
         <div class="seat-section">
 
             <div class="stage">STAGE / SCREEN</div>
 
-            <!-- Filter buttons: filter seats by category or by availability.
-                 script.js reads data-filter to know which category to show. -->
             <div class="filter-bar">
                 <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="VIP">VIP</button>
@@ -79,14 +76,14 @@
                 <button class="filter-btn" id="available-only-btn">Available Only</button>
             </div>
 
-            <!-- Seat capacity per category, e.g. "VIP: 14/20 available" -->
+            
             <div class="capacity-info">
                 <span id="vip-capacity">VIP: 0/20 available</span>
                 <span id="premium-capacity">Premium: 0/20 available</span>
                 <span id="regular-capacity">Regular: 0/20 available</span>
             </div>
 
-            <!-- script.js fills this with 60 seat buttons -->
+            
             <div class="seat-container" id="seat-container"></div>
 
             <div class="seat-legend">
@@ -97,7 +94,7 @@
 
         </div>
 
-        <!-- ============ RIGHT: booking summary ============ -->
+   
         <div class="booking-summary">
 
             <h2>Booking Summary</h2>
