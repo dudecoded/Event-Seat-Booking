@@ -1,3 +1,5 @@
+deployed link:https://event-seat-booking-sigma.vercel.app/
+
 WEbook — Event Seat Booking System
 
 A simple event discovery and seat booking website, built for a college/society project using plain HTML, CSS, and vanilla JavaScript — no frameworks, no backend, no database. All booking data is saved locally in the browser with localStorage.
