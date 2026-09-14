@@ -350,3 +350,28 @@ function searchEvents() {
 }
 
 searchButton.addEventListener("click", searchEvents);
+
+
+const categoryButtons = document.querySelectorAll(".category-card");
+
+categoryButtons.forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+        const category = button.querySelector("span").textContent;
+
+        if (category === "Sports") {
+            window.location.href = "event.html?event=basketball";
+        }
+
+        else if (category === "Concerts") {
+            window.location.href = "event.html?event=melody";
+        }
+
+        else if (category === "Comedy") {
+            window.location.href = "event.html?event=comedy";
+        }
+
+    });
+
+});
