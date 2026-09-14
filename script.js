@@ -224,7 +224,7 @@ if (seatContainer) {
     function applyFilters() {
 
         const activeButton = document.querySelector(".filter-btn[data-filter].active");
-        const selectedCategory = activeButton.dataset.filter; // "all", "VIP", "Premium" or "Regular"
+        const selectedCategory = activeButton.dataset.filter; 
 
         const allSeats = document.querySelectorAll(".seat");
 
@@ -324,3 +324,29 @@ if (bookingList) {
         });
     }
 }
+const searchInput = document.getElementById("event-search");
+const searchButton = document.querySelector(".search-btn");
+const eventCards = document.querySelectorAll(".event-card");
+
+function searchEvents() {
+
+    const searchText = searchInput.value.toLowerCase();
+
+    eventCards.forEach(function(card) {
+
+        const eventName = card.querySelector("h3").textContent.toLowerCase();
+        const eventCategory = card.querySelector(".event-category").textContent.toLowerCase();
+
+        if (
+            eventName.includes(searchText) ||
+            eventCategory.includes(searchText)
+        ) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+}
+
+searchButton.addEventListener("click", searchEvents);
