@@ -1,4 +1,4 @@
-
+// Event data
 
 const events = [
     {
@@ -33,6 +33,8 @@ const events = [
     }
 ];
 
+// Seat categories and prices
+
 
 const seatCategories = [
     { category: "VIP", price: 500 },
@@ -40,13 +42,13 @@ const seatCategories = [
     { category: "Regular", price: 150 }
 ];
 
-
+// URL parameter function
 
 function getQueryParam(name) {
     const params = new URLSearchParams(window.location.search);
     return params.get(name);
 }
-
+// Booking storage functions
 
 function getAllBookings() {
     const stored = localStorage.getItem("webookBookings");
@@ -56,7 +58,7 @@ function getAllBookings() {
 function saveAllBookings(bookings) {
     localStorage.setItem("webookBookings", JSON.stringify(bookings));
 }
-
+// Seat price and category functions
 
 function getSeatPrice(seatId) {
     if (seatId <= 20) return 500;     
@@ -70,10 +72,12 @@ function getSeatCategory(seatId) {
     return "Regular";
 }
 
-
+// Event details page
 
 
 const eventNameElement = document.getElementById("event-name");
+
+
 
 if (eventNameElement) {
 
@@ -98,6 +102,7 @@ if (eventNameElement) {
 
 
 
+// Booking page
 
 const seatContainer = document.getElementById("seat-container");
 
@@ -121,6 +126,7 @@ if (seatContainer) {
     const totalPriceElement = document.getElementById("total-price");
     const confirmButton = document.getElementById("confirm-booking");
 
+    // Generate seats
     
     for (let i = 1; i <= 60; i++) {
 
@@ -157,7 +163,8 @@ if (seatContainer) {
         seatContainer.appendChild(seat);
     }
 
-    
+    // Update booking summary 
+
     function updateSummary() {
 
         if (selectedSeats.length === 0) {
@@ -178,6 +185,7 @@ if (seatContainer) {
         totalPriceElement.textContent = "₹" + total;
     }
 
+    // Update seat capacity
     
     function updateCapacity() {
         seatCategories.forEach(cat => {
@@ -202,6 +210,7 @@ if (seatContainer) {
 
     updateCapacity();
 
+    // Seat filters
     
     let showAvailableOnly = false;
     const categoryFilterButtons = document.querySelectorAll(".filter-btn[data-filter]");
@@ -220,6 +229,8 @@ if (seatContainer) {
         availableOnlyBtn.classList.toggle("active", showAvailableOnly);
         applyFilters();
     });
+
+    // Apply seat filters
 
     function applyFilters() {
 
@@ -243,7 +254,7 @@ if (seatContainer) {
             }
         });
     }
-
+// Confirm booking
    
     confirmButton.addEventListener("click", function () {
 
@@ -261,7 +272,7 @@ if (seatContainer) {
     });
 }
 
-
+// My bookings page
 
 const bookingList = document.getElementById("booking-list");
 
@@ -308,6 +319,7 @@ if (bookingList) {
             bookingList.appendChild(card);
         });
 
+        // Cancel booking
         
         document.querySelectorAll(".cancel-btn").forEach(button => {
 
@@ -324,6 +336,8 @@ if (bookingList) {
         });
     }
 }
+
+// Event search
 const searchInput = document.getElementById("event-search");
 const searchButton = document.querySelector(".search-btn");
 const eventCards = document.querySelectorAll(".event-card");
@@ -351,6 +365,7 @@ function searchEvents() {
 
 searchButton.addEventListener("click", searchEvents);
 
+// Category buttons
 
 const categoryButtons = document.querySelectorAll(".category-card");
 
